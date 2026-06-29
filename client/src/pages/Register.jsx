@@ -47,6 +47,7 @@ const Register = () => {
     try {
       const res = await api.post("/auth/register", payload);
       alert(res.data.message);
+      navigate("/login");
     } catch (error) {
       console.log(res?.data?.message || error.message);
     }
