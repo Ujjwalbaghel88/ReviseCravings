@@ -1,9 +1,19 @@
 import React from 'react'
+import {MdOutlineDashboard} from "react-router-dom"
+const MenuItems =[
+    {name:"Overview",icon:<MdOutlineDashboard/>},
+    {name:"Orders",icon:<MdOutlineDashboard/>},
+    {name:,icon:<MdOutlineDashboard/>},
+]
+    
+
 
 const Sidebar = () => {
     return (
         <>
-            <div>Sidebar</div>
+         <div>
+            <div>User Dashboard</div>
+         </div>
         </>
     )
 }
