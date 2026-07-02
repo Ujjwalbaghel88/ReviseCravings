@@ -49,7 +49,8 @@ const Register = () => {
       alert(res.data.message);
       navigate("/login");
     } catch (error) {
-      console.log(res?.data?.message || error.message);
+      console.log(error.response?.data?.message || error.message);
+      alert(error.response?.data?.message || "Something went wrong");
     }
   };
 
