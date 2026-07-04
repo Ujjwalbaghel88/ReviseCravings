@@ -123,6 +123,9 @@
 // };
 
 // export default Login;
+
+
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import deliveryboy from "../assets/deliberyboy.png";
@@ -179,7 +182,6 @@ const Login = () => {
 
   return (
     <>
-
       <div className="min-h-[90vh] bg-linear-to-r from-(--secondary) to-(--primary) grid grid-cols-2 p-10">
         <div className="hidden md:block">
           <img src={deliveryboy} alt="" className="rotate-y-180" />
@@ -223,13 +225,6 @@ const Login = () => {
               className="col-span-2 mt-2 bg-(--primary) text-white py-2 px-4 rounded hover:bg-(--accent)"
             >
               Login
-            </button>
-            <button
-              type="button"
-              onClick={() => toast.success("Toast Working")}
-              className="col-span-2 mt-2 bg-green-500 text-white py-2 rounded"
-            >
-              Test Toast
             </button>
           </form>
 

@@ -1,49 +1,28 @@
-// import React from "react";
-
-// const Footer = () => {
-//   return (
-//     <>
-//       <div>Footer</div>
-//     </>
-//   );
-// };
-
-// export default Footer;
-// import React from "react";
-// import { Link } from "react-router-dom";
-
-// const Navbar = () => {
-//   return (
-//     <nav className="bg-blue-600 text-white flex justify-between items-center px-8 py-4">
-//       <h1 className="text-2xl font-bold">Cravings</h1>
-
-//       <div className="flex gap-6">
-//         <Link to="/">Home</Link>
-//         <Link to="/login">Login</Link>
-//         <Link to="/register">Register</Link>
-//         <Link to="/contact-us">Contact</Link>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
-
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { AiOutlineLogout } from "react-icons/ai";
+import api from "../config/api.config.js";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, setUser, isLogin, setIsLogin } = useAuth();
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    sessionStorage.removeItem("UserData");
-    setIsLogin(false);
-    setUser(false);
-    navigate("/");
+  const handleLogout = async () => {
+    try {
+      const res = await api.get("/auth/logout");
+      sessionStorage.removeItem("UserData");
+      setIsLogin(false);
+      setUser(false);
+      navigate("/");
+      toast.success(res.data.message);
+    } catch (error) {
+      toast.error(
+        error.response.status + " | " + error.response?.data?.message ||
+        error.message,
+      );
+    }
   };
 
   return (
