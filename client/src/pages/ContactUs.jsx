@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import deliveryboy from "../assets/deliberyboy.png";
 
+
 const ContactUs = () => {
   const navigate = useNavigate();
   const [contactData, setContactData] = useState({
