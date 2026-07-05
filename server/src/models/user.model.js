@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const UserSchema = new mongoose.Schema(
+const UserSchema = mongoose.Schema(
     {
         fullName: {
             type: String,
@@ -32,14 +32,14 @@ const UserSchema = new mongoose.Schema(
                 type: String,
                 required: true,
             },
-            public_id: {
+            publicId: {
                 type: String,
             },
         },
     },
     {
         timestamps: true,
-    }
+    },
 );
 
 const User = mongoose.model("user", UserSchema);

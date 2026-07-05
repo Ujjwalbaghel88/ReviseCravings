@@ -1,4 +1,3 @@
-
 import cloudinary from "./src/config/cloudinary.config.js";
 import express from "express";
 import connectDB from "./src/config/dbConnection.config.js";
@@ -38,16 +37,15 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT || 5000;
 
-app.listen(port, async() => {
+app.listen(port, async () => {
     console.log("Server Started on port:", port);
     connectDB();
-
     try {
         const result = await cloudinary.api.ping();
-        console.log("Cloudinary Connected:", );
-        
+        console.log("Cloudinary Connected :");
+        console.log(result);
     } catch (error) {
-        console.log("Cloudinary Connection Error:", error.message);
-        process.exit(1); // Exit the process with an error code
+        console.log(error.message);
+        process.exit(1);
     }
 });
