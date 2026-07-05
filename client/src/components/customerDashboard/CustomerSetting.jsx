@@ -17,6 +17,7 @@ const CustomerSetting = () => {
     });
 
     const [editingProfile, setEditingProfile] = useState(false);
+    const [profilePic, setProfilePic] = useState(null);
     const [profilePicPreview, setProfilePicPreview] = useState(null);
 
     const [formData, setFormData] = useState({
@@ -90,12 +91,12 @@ const CustomerSetting = () => {
 
     const handleProfilePicChange = (e) => {
         const file = e.target.files[0];
-        const fileURL = URL.createObjectURL(file);
 
-        console.log(file);
-        console.log(fileURL);
 
-        setProfilePicPreview(fileURL);
+
+
+        setProfilePic(file);
+        setProfilePicPreview(URL.createObjectURL(file));
     };
 
     return (

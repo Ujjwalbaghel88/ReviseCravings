@@ -1,5 +1,6 @@
 
 import User from "../models/user.model.js";
+import cloudinary from "../config/cloudinary.config.js";
 
 export const EditUserProfile = async (req, res, next) => {
     try {
@@ -18,6 +19,7 @@ export const EditUserProfile = async (req, res, next) => {
             return next(error);
         }
 
+        
         existingUser.fullName = fullName;
         existingUser.phone = phone;
 
