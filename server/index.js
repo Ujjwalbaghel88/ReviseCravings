@@ -10,7 +10,7 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: ["http://localhost:5173", "http://localhost:5174"], credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
@@ -32,7 +32,7 @@ app.use((err, req, res, next) => {
     const ErrMessage = err.message || "Internal Server Error";
     const ErrStausCode = err.statusCode || 500;
 
-    res.status(ErrStausCode).json({ message: ErrMessage });
+    res.status(ErrStausCode).json({ message: ErrMessage, data: null });
 });
 
 const port = process.env.PORT || 5000;

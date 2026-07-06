@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logoLight from "../assets/transparentLogoLight.png";
 import { useAuth } from "../context/AuthContext";
@@ -9,6 +9,18 @@ import api from "../config/ApiConfig";
 const Navbar = () => {
   const { user, isLogin, role, setUser, setIsLogin, setRole } = useAuth();
   const navigate = useNavigate();
+  const [photoUrl, setPhotoUrl] = useState(null);
+
+  // Update photo URL whenever user changes
+  useEffect(() => {
+    if (user?.photo) {
+      if (typeof user.photo === "string") {
+        setPhotoUrl(user.photo);
+      } else if (user.photo?.url) {
+        setPhotoUrl(user.photo.url);
+      }
+    }
+  }, [user?.photo]);
 
   const handleNavigate = () => {
     //console.log("Handle Navigate", role);
@@ -59,7 +71,7 @@ const Navbar = () => {
               onClick={handleNavigate}
             >
               <img
-                src={user?.photo}
+                src={photoUrl}
                 alt={user?.fullName}
                 className="w-12 h-12 rounded-full object-cover object-top"
               />

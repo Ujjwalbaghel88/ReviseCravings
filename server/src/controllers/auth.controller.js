@@ -12,7 +12,7 @@ export const RegisterUser = async (req, res, next) => {
       return next(error);
     }
 
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ email: { $regex: email, $options: "i" } });
     if (existingUser) {
       const error = new Error("Email already registred");
       error.statusCode = 409;
@@ -41,7 +41,7 @@ export const RegisterUser = async (req, res, next) => {
     res.status(201).json({ message: "User Created Successfully" });
   } catch (error) {
     console.log(error.message);
-    next();
+    next(error);
   }
 };
 
@@ -55,7 +55,7 @@ export const LoginUser = async (req, res, next) => {
       return next(error);
     }
 
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ email: { $regex: email, $options: "i" } });
     if (!existingUser) {
       const error = new Error("Email not registred");
       error.statusCode = 404;
@@ -77,7 +77,7 @@ export const LoginUser = async (req, res, next) => {
     });
   } catch (error) {
     console.log(error.message);
-    next();
+    next(error);
   }
 };
 
