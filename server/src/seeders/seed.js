@@ -1,20 +1,23 @@
 import dotenv from "dotenv";
-import { connect } from "mongoose";
 dotenv.config();
 
+import connectDB from "../config/dbConnection.config.js";
+import adminSeed from "./admin.seed.js";
+import userSeed from "./user.seed.js";
 
 const Seed = async () => {
-    try {
+  try {
+    connectDB();
 
-        connectDB();
-
-        
-    } catch (error) {
-        console.log(error.message);
-        process.exit(1);
-
-
-    }
+    await adminSeed();
+    await userSeed();
+    //Call The Function which we need to Seed.
+  } catch (error) {
+    console.log(error.message);
+  }
+  finally{
+    process.exit(1);
+  }
 };
 
 Seed();

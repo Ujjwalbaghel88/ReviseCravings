@@ -1,23 +1,23 @@
 import React from "react";
-import Sidebar from "../../components/customerDashboard/Sidebar";
-import CustomerOverview from "../../components/customerDashboard/CustomerOverview";
-import CustomerOrders from "../../components/customerDashboard/CustomerOrders";
-import CustomerSetting from "../../components/customerDashboard/CustomerSetting";
+import RiderOrders from "../../components/riderDashboard/RiderOrders";
+import RiderOverview from "../../components/riderDashboard/RiderOverview";
+import RiderSetting from "../../components/riderDashboard/RiderSetting";
+import RiderSidebar from "../../components/riderDashboard/RiderSidebar";
 import { useLocation , useNavigate} from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
 const RiderDashboard = () => {
-  const { isLogin } = useAuth();
+  const { isLogin,role } = useAuth();
   const navigate = useNavigate();
   const active = useLocation().state?.activeTab;
   const [activeTab, setActiveTab] = React.useState(active || "overview");
 
-  if (!isLogin) {
+  if (!isLogin || role!=="rider") {
     return (
       <div className="h-[92vh] bg-[url('/foodTable.webp')]  bg-cover bg-center">
         <div className="h-full backdrop-blur-lg flex flex-col items-center justify-center ">
           <h1 className="text-2xl font-bold text-(--color-neutral-content)">
-            Access Denied. Please log in as a customer to view this
+            Access Denied. Please log in as a rider to view this
             page.
           </h1>
           <button
@@ -36,12 +36,12 @@ const RiderDashboard = () => {
     <>
       <div className="h-[92vh] flex gap-2 m-2">
         <div className="w-3/17 bg-(--color-base-200) p-4 rounded-lg shadow-md h-full">
-          <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+          <RiderSidebar activeTab={activeTab} setActiveTab={setActiveTab} />
         </div>
         <div className="w-14/17 bg-(--color-base-100) p-4 rounded-lg shadow-md h-full">
-          {activeTab === "overview" && <CustomerOverview />}
-          {activeTab === "orders" && <CustomerOrders />}
-          {activeTab === "settings" && <CustomerSetting />}
+          {activeTab === "overview" && <RiderOverview />}
+          {activeTab === "orders" && <RiderOrders />}
+          {activeTab === "settings" && <RiderSetting />}
         </div>
       </div>
     </>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const CustomerOverview = () => {
+const RestaurantOverview = () => {
   return (
     <div className="overflow-y-auto h-full">
       <h2 className="text-2xl font-bold mb-6">Overview</h2>
@@ -22,4 +22,4 @@ const CustomerOverview = () => {
   );
 };
 
-export default CustomerOverview;
+export default RestaurantOverview;

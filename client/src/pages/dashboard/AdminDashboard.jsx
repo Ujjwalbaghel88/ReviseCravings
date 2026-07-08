@@ -1,15 +1,18 @@
 import React from "react";
-
+import AdminOrders from "../../components/adminDashboard/AdminOrders";
+import AdminOverview from "../../components/adminDashboard/AdminOverview";
+import AdminSetting from "../../components/adminDashboard/AdminSetting";
+import AdminSidebar from "../../components/adminDashboard/AdminSidebar";
 import { useLocation , useNavigate} from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
 const AdminDashboard = () => {
-  const { isLogin } = useAuth();
+  const { isLogin,role } = useAuth();
   const navigate = useNavigate();
   const active = useLocation().state?.activeTab;
   const [activeTab, setActiveTab] = React.useState(active || "overview");
 
-  if (!isLogin) {
+  if (!isLogin || role!== "admin") {
     return (
       <div className="h-[92vh] bg-[url('/foodTable.webp')]  bg-cover bg-center">
         <div className="h-full backdrop-blur-lg flex flex-col items-center justify-center ">
@@ -33,12 +36,12 @@ const AdminDashboard = () => {
     <>
       <div className="h-[92vh] flex gap-2 m-2">
         <div className="w-3/17 bg-(--color-base-200) p-4 rounded-lg shadow-md h-full">
-          <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+          <AdminSidebar activeTab={activeTab} setActiveTab={setActiveTab} />
         </div>
         <div className="w-14/17 bg-(--color-base-100) p-4 rounded-lg shadow-md h-full">
-          {activeTab === "overview" && <CustomerOverview />}
-          {activeTab === "orders" && <CustomerOrders />}
-          {activeTab === "settings" && <CustomerSetting />}
+          {activeTab === "overview" && <AdminOverview />}
+          {activeTab === "orders" && <AdminOrders />}
+          {activeTab === "settings" && <AdminSetting />}
         </div>
       </div>
     </>
