@@ -10,7 +10,7 @@ const otpSchema = new mongoose.Schema(
         type:String,
         required:true,
     },
-    expires
+    
 }
 
 )
