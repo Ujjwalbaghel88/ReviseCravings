@@ -42,7 +42,7 @@ const PasswordChangeModal = ({ open, onClose }) => {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-          "Unknown error occurred during password change. Please try again.",
+        "Unknown error occurred during password change. Please try again.",
       );
     } finally {
       setIsLoading(false);
@@ -54,7 +54,7 @@ const PasswordChangeModal = ({ open, onClose }) => {
     <>
       <div
         className="fixed inset-0 z-999 bg-black/60 backdrop-blur-xs flex justify-center items-center"
-        // onClick={handleCloseModal}
+      // onClick={handleCloseModal}
       >
         <div className="bg-white w-xl rounded shadow max-h-[80vh] overflow-y-auto relative">
           <header className="flex justify-between p-4 border-b border-(--color-secondary)">
