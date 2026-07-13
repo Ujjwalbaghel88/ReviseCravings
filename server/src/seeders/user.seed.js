@@ -24,7 +24,7 @@ const UserData = [
   },
   {
     fullName: "Rider1",
-    email: "Rider1@gmail.com",
+    email: "rider123@gmail.com",
     password: await bcrypt.hash("rider@123", 10),
     dob: "2000-01-01",
     gender: "other",
