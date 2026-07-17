@@ -3,11 +3,7 @@ import { MdEdit } from "react-icons/md";
 import { useAuth } from "../../context/AuthContext";
 import api from "../../config/ApiConfig";
 import toast from "react-hot-toast";
-<<<<<<< HEAD
 import { MdOutlineAddAPhoto,MdOutlineLockReset } from "react-icons/md";
-=======
-import { MdOutlineAddAPhoto, MdOutlineLockReset } from "react-icons/md";
->>>>>>> 33a0d2eb3346dbaff1e50ee512dc86b8c617f0b8
 import PasswordChangeModal from "../commonModals/PasswordChangeModal";
 
 const CustomerSetting = () => {
@@ -42,7 +38,7 @@ const CustomerSetting = () => {
 
       payload.append("displayPic", profilePic);
 
-      const response = await api.put(`/common/edit-profile`, payload);
+      const response = await api.put(`/user/edit-profile`, payload);
 
       setUser(response.data.data);
       sessionStorage.setItem("cravingUser", JSON.stringify(response.data.data));
