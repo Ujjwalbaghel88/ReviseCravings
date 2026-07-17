@@ -1,10 +1,10 @@
- import User from "../models/user.model.js";
+import User from "../models/user.model.js";
 import bcrypt from "bcrypt";
 
 const UserData = [
   {
     fullName: "Manager1",
-    email: "Manager1@gmail.com",
+    email: "manager1@gmail.com",
     password: await bcrypt.hash("manager@123", 10),
     dob: "2000-01-01",
     gender: "other",
@@ -14,8 +14,8 @@ const UserData = [
   },
   {
     fullName: "Customer1",
-    email: "Customer1@gmail.com",
-    password: await bcrypt.hash("customer@123", 10),
+    email: "ujjwalbaghel522@gmail.com",
+    password: await bcrypt.hash("ujjwal522", 10),
     dob: "2000-01-01",
     gender: "other",
     userType: "customer",
@@ -24,7 +24,7 @@ const UserData = [
   },
   {
     fullName: "Rider1",
-    email: "Rider1@gmail.com",
+    email: "rider123@gmail.com",
     password: await bcrypt.hash("rider@123", 10),
     dob: "2000-01-01",
     gender: "other",
