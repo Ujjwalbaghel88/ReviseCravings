@@ -80,7 +80,11 @@ const Register = () => {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
+<<<<<<< HEAD
         "Unknown error occurred during registration. Please try again.",
+=======
+          "Unknown error occurred during registration. Please try again.",
+>>>>>>> origin/main
       );
     } finally {
       setLoading(false);
@@ -135,10 +139,18 @@ const Register = () => {
               value={formData.fullName}
               onChange={handleInputChange}
               placeholder="Enter your full name"
+<<<<<<< HEAD
               className={`w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${errors.fullName
                 ? "border-(--color-error) border-2"
                 : "border-(--color-base-300)"
                 }`}
+=======
+              className={`w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
+                errors.fullName
+                  ? "border-(--color-error) border-2"
+                  : "border-(--color-base-300)"
+              }`}
+>>>>>>> origin/main
             />
             {errors.fullName && (
               <span className="text-(--color-error) text-xs mt-1 block">
@@ -149,17 +161,29 @@ const Register = () => {
 
           {/* Email */}
           <div className="mb-4">
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> origin/main
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleInputChange}
               placeholder="Enter your email"
+<<<<<<< HEAD
               className={`w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${errors.email
                 ? "border-(--color-error) border-2"
                 : "border-(--color-base-300)"
                 }`}
+=======
+              className={`w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
+                errors.email
+                  ? "border-(--color-error) border-2"
+                  : "border-(--color-base-300)"
+              }`}
+>>>>>>> origin/main
             />
             {errors.email && (
               <span className="text-(--color-error) text-xs mt-1 block">
@@ -170,17 +194,29 @@ const Register = () => {
 
           {/* Phone */}
           <div className="mb-4">
+<<<<<<< HEAD
 
+=======
+           
+>>>>>>> origin/main
             <input
               type="number"
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
               placeholder="Enter your phone number"
+<<<<<<< HEAD
               className={`w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${errors.phone
                 ? "border-(--color-error) border-2"
                 : "border-(--color-base-300)"
                 }`}
+=======
+              className={`w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
+                errors.phone
+                  ? "border-(--color-error) border-2"
+                  : "border-(--color-base-300)"
+              }`}
+>>>>>>> origin/main
             />
             {errors.phone && (
               <span className="text-(--color-error) text-xs mt-1 block">
@@ -196,10 +232,18 @@ const Register = () => {
                 name="gender"
                 value={formData.gender}
                 onChange={handleInputChange}
+<<<<<<< HEAD
                 className={`w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${errors.gender
                   ? "border-(--color-error) border-2"
                   : "border-(--color-base-300)"
                   }`}
+=======
+                className={`w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
+                  errors.gender
+                    ? "border-(--color-error) border-2"
+                    : "border-(--color-base-300)"
+                }`}
+>>>>>>> origin/main
               >
                 <option value="">Select gender</option>
                 <option value="male">Male</option>
@@ -218,10 +262,18 @@ const Register = () => {
                 name="dob"
                 value={formData.dob}
                 onChange={handleInputChange}
+<<<<<<< HEAD
                 className={`w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${errors.dob
                   ? "border-(--color-error) border-2"
                   : "border-(--color-base-300)"
                   }`}
+=======
+                className={`w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
+                  errors.dob
+                    ? "border-(--color-error) border-2"
+                    : "border-(--color-base-300)"
+                }`}
+>>>>>>> origin/main
               />
               {errors.dob && (
                 <span className="text-(--color-error) text-xs mt-1 block">
@@ -233,17 +285,29 @@ const Register = () => {
 
           {/* Password */}
           <div className="mb-4">
+<<<<<<< HEAD
 
+=======
+          
+>>>>>>> origin/main
             <input
               type="password"
               name="password"
               value={formData.password}
               onChange={handleInputChange}
               placeholder="Enter your password"
+<<<<<<< HEAD
               className={`w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${errors.password
                 ? "border-(--color-error) border-2"
                 : "border-(--color-base-300)"
                 }`}
+=======
+              className={`w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
+                errors.password
+                  ? "border-(--color-error) border-2"
+                  : "border-(--color-base-300)"
+              }`}
+>>>>>>> origin/main
             />
             {errors.password && (
               <span className="text-(--color-error) text-xs mt-1 block">
@@ -260,10 +324,18 @@ const Register = () => {
               value={formData.confirmPassword}
               onChange={handleInputChange}
               placeholder="Confirm your password"
+<<<<<<< HEAD
               className={`w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${errors.confirmPassword
                 ? "border-(--color-error) border-2"
                 : "border-(--color-base-300)"
                 }`}
+=======
+              className={`w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
+                errors.confirmPassword
+                  ? "border-(--color-error) border-2"
+                  : "border-(--color-base-300)"
+              }`}
+>>>>>>> origin/main
             />
             {errors.confirmPassword && (
               <span className="text-(--color-error) text-xs mt-1 block">
@@ -318,4 +390,8 @@ const Register = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Register;
+=======
+export default Register;
+>>>>>>> origin/main

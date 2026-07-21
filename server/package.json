@@ -1,11 +1,20 @@
 {
+<<<<<<< HEAD
   "name": "backend",
+=======
+  "name": "server",
+>>>>>>> origin/main
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+<<<<<<< HEAD
     "dev": "nodemon index.js"
+=======
+    "dev": "nodemon index.js",
+    "seed": "node ./src/seeders/seed.js"
+>>>>>>> origin/main
   },
   "keywords": [],
   "author": "",
@@ -21,7 +30,13 @@
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.7.3",
     "morgan": "^1.11.0",
+<<<<<<< HEAD
     "multer": "^2.2.0"
+=======
+    "multer": "^2.2.0",
+    "node": "^26.5.0",
+    "nodemailer": "^9.0.3"
+>>>>>>> origin/main
   },
   "devDependencies": {
     "nodemon": "^3.1.14"

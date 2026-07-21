@@ -49,7 +49,11 @@ const Contact = () => {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
+<<<<<<< HEAD
         "Unknown error occurred. Please try again.",
+=======
+          "Unknown error occurred. Please try again.",
+>>>>>>> origin/main
       );
     } finally {
       setLoading(false);
@@ -57,9 +61,16 @@ const Contact = () => {
   };
 
   const inputClass = (field) =>
+<<<<<<< HEAD
     `w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${errors[field]
       ? "border-(--color-error) border-2"
       : "border-(--color-base-300)"
+=======
+    `w-full px-3 py-2 border rounded-md text-sm text-(--color-neutral) placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-(--color-primary) ${
+      errors[field]
+        ? "border-(--color-error) border-2"
+        : "border-(--color-base-300)"
+>>>>>>> origin/main
     }`;
 
   return (
@@ -168,4 +179,8 @@ const Contact = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Contact;
+=======
+export default Contact;
+>>>>>>> origin/main

@@ -13,4 +13,8 @@ createRoot(document.getElementById("root")).render(
       </AuthProvider>
     </BrowserRouter>
   </StrictMode>,
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> origin/main

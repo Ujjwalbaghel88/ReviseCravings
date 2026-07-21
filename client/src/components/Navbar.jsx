@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
+=======
+import React from "react";
+>>>>>>> origin/main
 import { Link, useNavigate } from "react-router-dom";
 import logoLight from "../assets/transparentLogoLight.png";
 import { useAuth } from "../context/AuthContext";
@@ -9,6 +13,7 @@ import api from "../config/ApiConfig";
 const Navbar = () => {
   const { user, isLogin, role, setUser, setIsLogin, setRole } = useAuth();
   const navigate = useNavigate();
+<<<<<<< HEAD
   const [photoUrl, setPhotoUrl] = useState(null);
 
   // Update photo URL whenever user changes
@@ -21,6 +26,8 @@ const Navbar = () => {
       }
     }
   }, [user?.photo]);
+=======
+>>>>>>> origin/main
 
   const handleNavigate = () => {
     //console.log("Handle Navigate", role);
@@ -71,14 +78,23 @@ const Navbar = () => {
               onClick={handleNavigate}
             >
               <img
+<<<<<<< HEAD
                 src={photoUrl}
+=======
+                src={user?.photo.url}
+>>>>>>> origin/main
                 alt={user?.fullName}
                 className="w-12 h-12 rounded-full object-cover object-top"
               />
               <div className="flex flex-col items-start">
                 <span className="text-base">{user?.fullName}</span>
+<<<<<<< HEAD
                 <span className="text-xs text-(--color-primary-content)/80">
                   Customer
+=======
+                <span className="text-xs text-(--color-primary-content)/80 uppercase">
+                  {role}
+>>>>>>> origin/main
                 </span>
               </div>
             </button>
