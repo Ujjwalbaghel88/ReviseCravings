@@ -8,10 +8,11 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import CustomerDashboard from "./pages/dashboard/CustomerDashboard";
 import Contact from "./pages/Contact";
-const App = () => {
 import RestaurantDashboard from "./pages/dashboard/RestaurantDashboard";
 import RiderDashboard from "./pages/dashboard/RiderDashboard";
 import AdminDashboard from "./pages/dashboard/AdminDashboard";
+
+const App = () => {
   return (
     <>
       <Toaster />
